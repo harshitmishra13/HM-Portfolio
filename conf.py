@@ -1,6 +1,5 @@
 import os
 import sys
-import yaml
 from pathlib import Path
 from typing import Any, Dict
 import pydata_sphinx_theme
