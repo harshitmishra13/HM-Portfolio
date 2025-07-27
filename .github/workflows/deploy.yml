@@ -1,37 +1,46 @@
+# .github/workflows/deploy.yml
+
 name: Build & Deploy Sphinx Portfolio
 
+# Trigger on pushes to main branch
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
+
+# Grant the GITHUB_TOKEN permission to update Pages and repository contents
+permissions:
+  contents: write   # for pushing to gh-pages
+  pages: write      # for publishing GitHub Pages
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
-      with:
-        fetch-depth: 0
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
 
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: "3.x"
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.x"
 
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
 
-    - name: Build Sphinx site
-      run: |
-        python -m sphinx -b html . build/html
+      - name: Build Sphinx site
+        run: |
+          python -m sphinx -b html . build/html
 
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v4
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_branch: gh-pages
-        publish_dir: build/html
-        keep_files: false
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: build/html
+          keep_files: false
