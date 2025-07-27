@@ -15,7 +15,6 @@ extensions = [
     "sphinxcontrib.youtube",
     "sphinx_copybutton",
     "sphinx.ext.todo",
-    "myst_parser",
 ]
 
 
