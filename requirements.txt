@@ -1,0 +1,5 @@
+sphinx>=8.0
+pydata-sphinx-theme>=0.16
+sphinx-design
+sphinxcontrib-youtube
+sphinx-copybutton
