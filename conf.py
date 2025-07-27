@@ -5,7 +5,7 @@ from typing import Any, Dict
 import pydata_sphinx_theme
 
 # -- Project information -----------------------------------------------------
-project = "Harshit Mishra's Portfolio"
+project = "Harshit Mishra Portfolio"
 author  = "Harshit Mishra"
 release = "2025"
 
