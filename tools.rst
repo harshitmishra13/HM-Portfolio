@@ -1,7 +1,7 @@
 .. _tools:
 
 Tools
-=============
+======
 
 *Skilled in the setup and operation of essential content creation tools, including audio recording equipment and lighting for optimal results.*
 
