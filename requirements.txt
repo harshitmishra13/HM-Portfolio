@@ -3,3 +3,6 @@ pydata-sphinx-theme>=0.16
 sphinx-design
 sphinxcontrib-youtube
 sphinx-copybutton
+PyYAML
+pathlib
+typing
